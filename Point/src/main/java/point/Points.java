@@ -12,19 +12,16 @@ class BasicPoint implements Cloneable {
 	public Object clone()throws CloneNotSupportedException{  
 		return super.clone();  
 		}  
-	static void copyobject(){
-		try {
+	static void copyobject()throws CloneNotSupportedException{
 		BasicPoint s = new BasicPoint("4.6","8");
 		l.log(Level.INFO,()-> ""+(s.x).equals(s.y)); 
 		BasicPoint s1 = (BasicPoint)s.clone();
 		l.log(Level.INFO,()-> ""+s1.x+" "+s1.y);
-		}
-		catch(CloneNotSupportedException c) {}
 }
 }
 public class Points
 {
-	public static void main(String[] args) {
+	public static void main(String[] args)throws CloneNotSupportedException {
 		BasicPoint.copyobject(); 
 		
 		
