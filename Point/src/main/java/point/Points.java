@@ -8,9 +8,9 @@ public class Points implements Cloneable {
 	static double y;
 	static Scanner scan = new Scanner(System.in);
 	static PrintStream display=new PrintStream((new FileOutputStream(FileDescriptor.out)));
-	Points(double x,double y){
-		this.x=x;
-		this.y=y;
+	Points(double axis1,double axis2){
+		x=axis1;
+		y=axis2;
 	}
 	static boolean equals() {
 		if(x==y)
@@ -36,7 +36,9 @@ public class Points implements Cloneable {
 		Points obj = new Points(x,y);
 		display.println("The x and y axis are same : "+Points.equals());
         obj = Points.Clone(obj);  
-        display.println("The new x and y axis are "+obj.x +" and "+ obj.y);
+        display.println("The new x and y axis are "+Points.x +" and "+ Points.y);
         display.println("--------------------X---------------------");
 	}
 }
+
+
