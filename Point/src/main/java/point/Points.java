@@ -28,8 +28,8 @@ public class Points implements Cloneable {
 		double x = scan.nextDouble();
 		double y = scan.nextDouble();
 		Points obj1 = new Points(x,y);
-		Points obj2 = (Points)obj1.clone();
-		return obj2;
+		return (Points)obj1.clone();
+		
 	}
 	public static void main(String[] args) throws CloneNotSupportedException{
 		display.println("Enter x and y axis : ");
