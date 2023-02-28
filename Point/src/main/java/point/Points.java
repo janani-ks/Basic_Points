@@ -9,19 +9,21 @@ public class Points implements Cloneable {
 	static Scanner scan = new Scanner(System.in);
 	static PrintStream display=new PrintStream((new FileOutputStream(FileDescriptor.out)));
 	Points(double axis1,double axis2){
-		Points.x=axis1;
-		Points.y=axis2;
+		x=axis1;
+		y=axis2;
 	}
 	static boolean equals() {
+		boolean b;
 		if(x==y)
-			return true;
+			b = true;
 		else
-			return false;
+			b = false;
+		return b;
 	}
 	public Object clone()throws CloneNotSupportedException{  
 		return super.clone();  
 	}  
-	static void clone(Points obj)throws CloneNotSupportedException{
+	static void cloneobj(Points obj)throws CloneNotSupportedException{
 		display.println("Enter new x and y axis : ");
 		double x = scan.nextDouble();
 		double y = scan.nextDouble();
@@ -34,8 +36,8 @@ public class Points implements Cloneable {
 		double y = scan.nextDouble();
 		Points obj = new Points(x,y);
 		display.println("The x and y axis are same : "+Points.equals());
-        Points.clone(obj);  
-        display.println("The new x and y axis are "+Points.x +" and "+ Points.y);
+        Points.cloneobj(obj);  
+        display.println("The new x and y axis are "+Points.x +" and "+Points.y);
         display.println("--------------------X---------------------");
 	}
 }
